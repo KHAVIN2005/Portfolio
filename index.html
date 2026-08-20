@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Khavin K J | Software Engineer</title>
+
+    <!-- Boxicons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --header-height: 3.5rem;
+
+            --first-color: #4070f4;
+            --first-color-alt: #315ed6;
+
+            --second-color: #1d1d41;
+            --dark-color: #171725;
+
+            --text-color: #464655;
+            --text-color-light: #85859b;
+
+            --body-color: #fbfbfe;
+            --container-color: #ffffff;
+
+            --border-color: #e7e7f3;
+
+            --body-font: 'Poppins', sans-serif;
+
+            --z-fixed: 100;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            font-size: 1rem;
+            color: var(--text-color);
+            background: var(--body-color);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--second-color);
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .bd-grid {
+            max-width: 1100px;
+            width: calc(100% - 3rem);
+            margin: auto;
+        }
+
+        .section {
+            padding: 6rem 0 2rem;
+        }
+
+        .section-title {
+            position: relative;
+            font-size: 1.9rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 55px;
+            height: 3px;
+            border-radius: 5px;
+            background: var(--first-color);
+        }
+
+        /* ================= HEADER ================= */
+
+        .l-header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: var(--z-fixed);
+
+            background: rgba(251, 251, 254, 0.94);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav {
+            height: var(--header-height);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--second-color);
+        }
+
+        .nav__logo span {
+            color: var(--first-color);
+        }
+
+        .nav__list {
+            display: flex;
+            column-gap: 2.2rem;
+        }
+
+        .nav__link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-color);
+
+            position: relative;
+
+            transition: 0.2s;
+        }
+
+        .nav__link::after {
+            content: '';
+
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--first-color);
+
+            transition: 0.25s;
+        }
+
+        .nav__link:hover,
+        .active-link {
+            color: var(--first-color);
+        }
+
+        .nav__link:hover::after,
+        .active-link::after {
+            width: 100%;
+        }
+
+        .nav__toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ================= HOME ================= */
+
+        .home {
+            min-height: 100vh;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+
+            align-items: center;
+            gap: 3rem;
+
+            padding-top: 7rem;
+        }
+
+        .home__title {
+            font-size: 3rem;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        .home__title-color {
+            color: var(--first-color);
+        }
+
+        .home__subtitle {
+            display: block;
+
+            margin-top: 0.8rem;
+
+            font-size: 1.2rem;
+            font-weight: 400;
+
+            color: var(--text-color-light);
+        }
+
+        .home__description {
+            max-width: 620px;
+
+            margin: 1.5rem 0 2rem;
+
+            font-size: 1rem;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 0.85rem 1.7rem;
+
+            background: var(--first-color);
+            color: white;
+
+            border-radius: 0.5rem;
+
+            font-size: 0.9rem;
+            font-weight: 500;
+
+            border: none;
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+        .button:hover {
+            background: var(--first-color-alt);
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            margin-left: 0.7rem;
+
+            background: transparent;
+
+            color: var(--first-color);
+
+            border: 1px solid var(--first-color);
+        }
+
+        .button-outline:hover {
+            color: white;
+            background: var(--first-color);
+        }
+
+        .home__social {
+            display: flex;
+            gap: 0.8rem;
+
+            margin-top: 2rem;
+        }
+
+        .home__social-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--second-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+
+            font-size: 1.2rem;
+
+            transition: 0.2s;
+        }
+
+        .home__social-icon:hover {
+            color: white;
+            background: var(--first-color);
+            border-color: var(--first-color);
+            transform: translateY(-3px);
+        }
+
+        /* ================= PROFILE PHOTO ================= */
+
+        .home__img {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-wrapper {
+            width: 340px;
+            height: 340px;
+
+            padding: 8px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                var(--first-color),
+                #8ba9ff
+            );
+
+            box-shadow:
+                0 25px 60px rgba(64, 112, 244, 0.25);
+        }
+
+        .profile-wrapper img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid white;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about__container {
+            display: grid;
+
+            grid-template-columns: 0.7fr 1.3fr;
+
+            gap: 4rem;
+
+            align-items: center;
+        }
+
+        .about__img {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about__img img {
+            width: 280px;
+            height: 280px;
+
+            object-fit: cover;
+
+            border-radius: 1.2rem;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .about__subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .about__text {
+            margin-bottom: 1.5rem;
+        }
+
+        .about__info li {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 1rem;
+
+            padding: 0.65rem 0;
+
+            border-bottom: 1px solid var(--border-color);
+
+            font-size: 0.9rem;
+        }
+
+        .about__info li span:first-child {
+            color: var(--text-color-light);
+        }
+
+        .about__info li span:last-child {
+            font-weight: 500;
+            color: var(--second-color);
+
+            text-align: right;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills__container {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 3rem;
+        }
+
+        .skills__subtitle {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+
+        .skills__text {
+            margin-bottom: 1.8rem;
+        }
+
+        .skills__group {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills__group-title {
+            font-size: 0.9rem;
+
+            color: var(--first-color);
+
+            margin-bottom: 0.6rem;
+
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 0.7rem;
+        }
+
+        .skill-tag {
+            padding: 0.45rem 0.9rem;
+
+            background: white;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 100px;
+
+            font-size: 0.82rem;
+
+            color: var(--second-color);
+
+            transition: 0.2s;
+        }
+
+        .skill-tag:hover {
+            color: white;
+
+            background: var(--first-color);
+
+            border-color: var(--first-color);
+
+            transform: translateY(-2px);
+        }
+
+        .skills__panel {
+            padding: 1.7rem;
+
+            border-radius: 1rem;
+
+            background: var(--dark-color);
+
+            color: #cbd6ff;
+
+            font-family: 'Courier New', monospace;
+
+            font-size: 0.85rem;
+
+            box-shadow:
+                0 20px 40px rgba(29, 29, 65, 0.25);
+        }
+
+        .dots {
+            display: flex;
+
+            gap: 6px;
+
+            margin-bottom: 1.2rem;
+        }
+
+        .dots span {
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: #45455e;
+        }
+
+        .code-line {
+            margin-bottom: 0.4rem;
+        }
+
+        .c1 {
+            color: #ff8ac2;
+        }
+
+        .c2 {
+            color: #8affc1;
+        }
+
+        .c3 {
+            color: #8ac2ff;
+        }
+
+        /* ================= WORK ================= */
+
+        .work__container {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 1.3rem;
+        }
+
+        .work__card {
+            position: relative;
+
+            min-height: 280px;
+
+            padding: 1.5rem;
+
+            display: flex;
+            align-items: flex-end;
+
+            border-radius: 1rem;
+
+            overflow: hidden;
+
+            color: white;
+
+            transition: 0.25s;
+        }
+
+        .work__card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .work__card::before {
+            content: '';
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0.95;
+        }
+
+        .work__card:nth-child(1)::before {
+            background: linear-gradient(
+                145deg,
+                #4070f4,
+                #1d1d41
+            );
+        }
+
+        .work__card:nth-child(2)::before {
+            background: linear-gradient(
+                145deg,
+                #6a5bd0,
+                #1d1d41
+            );
+        }
+
+        .work__card:nth-child(3)::before {
+            background: linear-gradient(
+                145deg,
+                #2f9e6e,
+                #1d1d41
+            );
+        }
+
+        .work__card:nth-child(4)::before {
+            background: linear-gradient(
+                145deg,
+                #e0983c,
+                #1d1d41
+            );
+        }
+
+        .work__card:nth-child(5)::before {
+            background: linear-gradient(
+                145deg,
+                #3aa6b9,
+                #1d1d41
+            );
+        }
+
+        .work__card:nth-child(6)::before {
+            background: linear-gradient(
+                145deg,
+                #c15b8e,
+                #1d1d41
+            );
+        }
+
+        .work__body {
+            position: relative;
+            z-index: 1;
+        }
+
+        .work__tag {
+            display: inline-block;
+
+            margin-bottom: 0.6rem;
+
+            padding: 3px 9px;
+
+            border-radius: 100px;
+
+            background: rgba(255, 255, 255, 0.18);
+
+            font-size: 0.65rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.05em;
+        }
+
+        .work__title {
+            color: white;
+
+            font-size: 1rem;
+
+            margin-bottom: 0.4rem;
+        }
+
+        .work__desc {
+            color: rgba(255, 255, 255, 0.85);
+
+            font-size: 0.76rem;
+
+            line-height: 1.6;
+        }
+
+        /* ================= PUBLICATIONS ================= */
+
+        .publication {
+            margin-top: 1rem;
+
+            padding: 1.2rem 1.3rem;
+
+            background: white;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 0.8rem;
+
+            transition: 0.2s;
+        }
+
+        .publication:hover {
+            transform: translateY(-3px);
+
+            border-color: var(--first-color);
+        }
+
+        .publication strong {
+            color: var(--second-color);
+        }
+
+        .publication span {
+            display: block;
+
+            margin-top: 0.25rem;
+
+            color: var(--text-color-light);
+
+            font-size: 0.8rem;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact__container {
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 3rem;
+        }
+
+        .contact__info-list {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 1.2rem;
+        }
+
+        .contact__info-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 0.9rem;
+        }
+
+        .contact__info-item i {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            background: var(--first-color);
+
+            border-radius: 50%;
+
+            font-size: 1.2rem;
+        }
+
+        .contact__info-item a,
+        .contact__info-item span {
+            color: var(--text-color);
+
+            font-size: 0.9rem;
+        }
+
+        .contact__form {
+            display: grid;
+
+            gap: 1rem;
+        }
+
+        .contact__input {
+            width: 100%;
+
+            padding: 0.9rem 1rem;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 0.5rem;
+
+            outline: none;
+
+            font-family: var(--body-font);
+
+            background: white;
+
+            font-size: 0.9rem;
+        }
+
+        .contact__input:focus {
+            border-color: var(--first-color);
+        }
+
+        textarea.contact__input {
+            resize: vertical;
+
+            min-height: 130px;
+        }
+
+        .contact__note {
+            font-size: 0.75rem;
+
+            color: var(--text-color-light);
+        }
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+            margin-top: 4rem;
+
+            padding: 2.5rem 0 1.5rem;
+
+            text-align: center;
+
+            color: white;
+
+            background: var(--second-color);
+        }
+
+        .footer__title {
+            font-size: 1.2rem;
+
+            font-weight: 600;
+
+            margin-bottom: 1rem;
+        }
+
+        .footer__social {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 0.8rem;
+
+            margin-bottom: 1.3rem;
+        }
+
+        .footer__icon {
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            border-radius: 50%;
+
+            transition: 0.2s;
+        }
+
+        .footer__icon:hover {
+            background: var(--first-color);
+
+            border-color: var(--first-color);
+        }
+
+        .footer__copy {
+            font-size: 0.75rem;
+
+            color: rgba(255,255,255,0.55);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media screen and (max-width: 768px) {
+
+            .nav__menu {
+                position: fixed;
+
+                top: var(--header-height);
+
+                right: -100%;
+
+                width: 75%;
+
+                height: 100vh;
+
+                padding: 2.5rem;
+
+                background: white;
+
+                box-shadow: -5px 0 20px rgba(0,0,0,0.08);
+
+                transition: 0.35s;
+            }
+
+            .nav__menu.show {
+                right: 0;
+            }
+
+            .nav__list {
+                flex-direction: column;
+
+                gap: 1.7rem;
+            }
+
+            .nav__toggle {
+                display: block;
+            }
+
+            .home {
+                min-height: auto;
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                padding: 8rem 0 4rem;
+            }
+
+            .home__description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .home__social {
+                justify-content: center;
+            }
+
+            .home__img {
+                order: -1;
+            }
+
+            .profile-wrapper {
+                width: 260px;
+                height: 260px;
+            }
+
+            .home__title {
+                font-size: 2.2rem;
+            }
+
+            .about__container,
+            .skills__container,
+            .contact__container {
+                grid-template-columns: 1fr;
+            }
+
+            .about__img {
+                order: -1;
+            }
+
+            .work__container {
+                grid-template-columns: 1fr;
+            }
+
+            .about__info li {
+                flex-direction: column;
+
+                gap: 0.15rem;
+            }
+
+            .about__info li span:last-child {
+                text-align: left;
+            }
+
+            .button-outline {
+                margin-left: 0;
+
+                margin-top: 0.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="l-header">
+
+    <nav class="nav bd-grid">
+
+        <a href="#home" class="nav__logo">
+            Khavin<span>.</span>
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+
+            <ul class="nav__list">
+
+                <li>
+                    <a href="#home" class="nav__link active-link">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about" class="nav__link">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills" class="nav__link">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#work" class="nav__link">
+                        Work
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="nav__link">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="bx bx-menu"></i>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<!-- ================= HOME ================= -->
+
+<section class="home bd-grid" id="home">
+
+    <div>
+
+        <h1 class="home__title">
+
+            Hi, I'm
+            <span class="home__title-color">
+                Khavin K J
+            </span>
+
+            <span class="home__subtitle">
+                Electronics & Communication Engineering Graduate
+                | Software Engineer
+            </span>
+
+        </h1>
+
+        <p class="home__description">
+
+            I build practical software solutions using Java, SQL,
+            JavaScript and modern web technologies, with a strong
+            foundation in data structures, algorithms and
+            object-oriented programming.
+
+        </p>
+
+        <a href="#contact" class="button">
+            Contact Me
+        </a>
+
+        <a
+            href="assets/Khavin K J.pdf"
+            class="button button-outline"
+            download
+        >
+            Download Resume
+        </a>
+
+
+        <div class="home__social">
+
+            <a
+                href="https://in.linkedin.com/in/khavin-k-j-529815254"
+                target="_blank"
+                rel="noopener"
+                class="home__social-icon"
+                aria-label="LinkedIn"
+            >
+                <i class="bx bxl-linkedin"></i>
+            </a>
+
+            <a
+                href="https://github.com/KHAVIN2005"
+                target="_blank"
+                rel="noopener"
+                class="home__social-icon"
+                aria-label="GitHub"
+            >
+                <i class="bx bxl-github"></i>
+            </a>
+
+            <a
+                href="mailto:khavin2005@gmail.com"
+                class="home__social-icon"
+                aria-label="Email"
+            >
+                <i class="bx bx-envelope"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="home__img">
+
+        <div class="profile-wrapper">
+
+            <!-- Your professional photo -->
+            <img
+                src="assets/profile.jpg"
+                alt="Khavin K J"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about section bd-grid" id="about">
+
+    <h2 class="section-title">
+        About
+    </h2>
+
+
+    <div class="about__container">
+
+        <div class="about__img">
+
+            <img
+                src="assets/profile.jpg"
+                alt="Khavin K J"
+            >
+
+        </div>
+
+
+        <div>
+
+            <h3 class="about__subtitle">
+                I'm Khavin K J
+            </h3>
+
+            <p class="about__text">
+
+                I am an Electronics and Communication Engineering
+                graduate from Sathyabama Institute of Science and
+                Technology with a strong interest in software
+                development.
+
+                I have built a solid foundation in Java, SQL,
+                HTML, CSS, JavaScript, data structures, algorithms,
+                object-oriented programming and Java Collections.
+
+                My projects include a real-time face recognition
+                attendance system, a Disney+ Hotstar-inspired
+                frontend application and a low-power hybrid
+                full-adder circuit.
+
+            </p>
+
+
+            <ul class="about__info">
+
+                <li>
+                    <span>Degree</span>
+                    <span>B.E. Electronics & Communication Engineering</span>
+                </li>
+
+                <li>
+                    <span>Institute</span>
+                    <span>
+                        Sathyabama Institute of Science & Technology
+                    </span>
+                </li>
+
+                <li>
+                    <span>Graduation</span>
+                    <span>2022 – 2026</span>
+                </li>
+
+                <li>
+                    <span>CGPA</span>
+                    <span>9.23 / 10.0</span>
+                </li>
+
+                <li>
+                    <span>Location</span>
+                    <span>Chennai, Tamil Nadu</span>
+                </li>
+
+                <li>
+                    <span>Status</span>
+                    <span>Open to entry-level software roles</span>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="skills section bd-grid" id="skills">
+
+    <h2 class="section-title">
+        Skills
+    </h2>
+
+
+    <div class="skills__container">
+
+        <div>
+
+            <h3 class="skills__subtitle">
+                Technical Skills
+            </h3>
+
+            <p class="skills__text">
+
+                Technologies and computer science fundamentals
+                I use for software development and problem solving.
+
+            </p>
+
+
+            <div class="skills__group">
+
+                <div class="skills__group-title">
+                    Programming
+                </div>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skills__group">
+
+                <div class="skills__group-title">
+                    Computer Science
+                </div>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">
+                        Data Structures
+                    </span>
+
+                    <span class="skill-tag">
+                        Algorithms
+                    </span>
+
+                    <span class="skill-tag">
+                        OOP
+                    </span>
+
+                    <span class="skill-tag">
+                        Java Collections
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skills__group">
+
+                <div class="skills__group-title">
+                    Database & Tools
+                </div>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">
+                        MySQL
+                    </span>
+
+                    <span class="skill-tag">
+                        VS Code
+                    </span>
+
+                    <span class="skill-tag">
+                        Arduino IDE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="skills__panel">
+
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="code-line">
+                <span class="c1">const</span>
+                <span class="c2">engineer</span> =
+                {
+            </div>
+
+            <div class="code-line">
+                &nbsp;&nbsp;language:
+                [
+                <span class="c3">"Java"</span>,
+                <span class="c3">"SQL"</span>
+                ],
+            </div>
+
+            <div class="code-line">
+                &nbsp;&nbsp;frontend:
+                [
+                <span class="c3">"HTML"</span>,
+                <span class="c3">"CSS"</span>,
+                <span class="c3">"JS"</span>
+                ],
+            </div>
+
+            <div class="code-line">
+                &nbsp;&nbsp;core:
+                [
+                <span class="c3">"DSA"</span>,
+                <span class="c3">"OOP"</span>
+                ],
+            </div>
+
+            <div class="code-line">
+                &nbsp;&nbsp;database:
+                <span class="c3">"MySQL"</span>,
+            </div>
+
+            <div class="code-line">
+                &nbsp;&nbsp;focus:
+                <span class="c3">"Software Development"</span>
+            </div>
+
+            <div class="code-line">
+                };
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WORK ================= -->
+
+<section class="work section bd-grid" id="work">
+
+    <h2 class="section-title">
+        Work
+    </h2>
+
+
+    <div class="work__container">
+
+
+        <!-- FaceLume -->
+
+        <div class="work__card">
+
+            <div class="work__body">
+
+                <span class="work__tag">
+                    Project · 2024
+                </span>
+
+                <h3 class="work__title">
+                    FaceLume
+                </h3>
+
+                <p class="work__desc">
+
+                    Real-time face recognition attendance
+                    system using OpenCV, YOLOv5 and RetinaFace,
+                    with anti-spoofing and database integration.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hotstar -->
+
+        <div class="work__card">
+
+            <div class="work__body">
+
+                <span class="work__tag">
+                    Project · 2026
+                </span>
+
+                <h3 class="work__title">
+                    Disney+ Hotstar Clone
+                </h3>
+
+                <p class="work__desc">
+
+                    Frontend recreation using HTML, CSS and
+                    JavaScript with structured layouts,
+                    navigation, thumbnail cards and dynamic
+                    content sliders.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hybrid Adder -->
+
+        <div class="work__card">
+
+            <div class="work__body">
+
+                <span class="work__tag">
+                    Research · 2025–26
+                </span>
+
+                <h3 class="work__title">
+                    Hybrid Full Adder
+                </h3>
+
+                <p class="work__desc">
+
+                    1-bit hybrid full adder designed in 90 nm CMOS
+                    using PTL and TG logic, with 13T and 15T variants.
+
+                    Achieved 44.94% power reduction at 0.7V.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ThinkSemi -->
+
+        <div class="work__card">
+
+            <div class="work__body">
+
+                <span class="work__tag">
+                    Experience · 2024
+                </span>
+
+                <h3 class="work__title">
+                    ThinkSemi Infotech
+                </h3>
+
+                <p class="work__desc">
+
+                    Assembled and debugged 10+ PCB prototypes,
+                    diagnosed circuit faults and helped reduce
+                    testing time by 20%.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Smart Energy -->
+
+        <div class="work__card">
+
+            <div class="work__body">
+
+                <span class="work__tag">
+                    Publication · 2025
+                </span>
+
+                <h3 class="work__title">
+                    Smart Energy Analyser
+                </h3>
+
+                <p class="work__desc">
+
+                    Cloud-based smart energy analyser using
+                    IoT technologies.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Publication -->
+
+        <div class="work__card">
+
+            <div class="work__body">
+
+                <span class="work__tag">
+                    Publication · 2026
+                </span>
+
+                <h3 class="work__title">
+                    Hybrid Full Adder
+                </h3>
+
+                <p class="work__desc">
+
+                    Research work on low-power and
+                    high-performance hybrid full-adder
+                    circuit design.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Publications -->
+
+    <div style="margin-top: 3rem;">
+
+        <h3 style="margin-bottom: 1rem;">
+            Publications
+        </h3>
+
+
+        <div class="publication">
+
+            <strong>
+                A Cloud-Based Smart Energy Analyser Using IoT
+            </strong>
+
+            <span>
+                ICDSAAI 2025
+            </span>
+
+        </div>
+
+
+        <div class="publication">
+
+            <strong>
+                Design of Low-Power, High-Performance Hybrid
+                Full Adder Circuit
+            </strong>
+
+            <span>
+                RMKMATE 2026 · IEEE
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact section bd-grid" id="contact">
+
+    <h2 class="section-title">
+        Contact
+    </h2>
+
+
+    <div class="contact__container">
+
+
+        <div class="contact__info-list">
+
+
+            <div class="contact__info-item">
+
+                <i class="bx bx-envelope"></i>
+
+                <a href="mailto:khavin2005@gmail.com">
+                    khavin2005@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact__info-item">
+
+                <i class="bx bx-phone"></i>
+
+                <a href="tel:+917339612198">
+                    +91 73396 12198
+                </a>
+
+            </div>
+
+
+            <div class="contact__info-item">
+
+                <i class="bx bx-map"></i>
+
+                <span>
+                    Chennai, Tamil Nadu
+                </span>
+
+            </div>
+
+
+            <div class="contact__info-item">
+
+                <i class="bx bxl-linkedin"></i>
+
+                <a
+                    href="https://in.linkedin.com/in/khavin-k-j-529815254"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    LinkedIn Profile
+                </a>
+
+            </div>
+
+
+            <div class="contact__info-item">
+
+                <i class="bx bxl-github"></i>
+
+                <a
+                    href="https://github.com/KHAVIN2005"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    GitHub Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <form
+            class="contact__form"
+            id="contact-form"
+        >
+
+            <input
+                type="text"
+                id="cf-name"
+                class="contact__input"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="cf-email"
+                class="contact__input"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                id="cf-message"
+                class="contact__input"
+                rows="6"
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="button"
+            >
+                Send Message
+            </button>
+
+            <p class="contact__note">
+                Your email application will open with the
+                message pre-filled.
+            </p>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <p class="footer__title">
+        Khavin K J
+    </p>
+
+
+    <div class="footer__social">
+
+        <a
+            href="https://in.linkedin.com/in/khavin-k-j-529815254"
+            target="_blank"
+            rel="noopener"
+            class="footer__icon"
+        >
+            <i class="bx bxl-linkedin"></i>
+        </a>
+
+        <a
+            href="https://github.com/KHAVIN2005"
+            target="_blank"
+            rel="noopener"
+            class="footer__icon"
+        >
+            <i class="bx bxl-github"></i>
+        </a>
+
+        <a
+            href="mailto:khavin2005@gmail.com"
+            class="footer__icon"
+        >
+            <i class="bx bx-envelope"></i>
+        </a>
+
+    </div>
+
+
+    <p class="footer__copy">
+        © 2026 Khavin K J. All rights reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+    /* ================= MOBILE MENU ================= */
+
+    const navMenu =
+        document.getElementById("nav-menu");
+
+    const navToggle =
+        document.getElementById("nav-toggle");
+
+
+    navToggle.addEventListener("click", () => {
+
+        navMenu.classList.toggle("show");
+
+    });
+
+
+    document
+        .querySelectorAll(".nav__link")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navMenu.classList.remove("show");
+
+            });
+
+        });
+
+
+    /* ================= ACTIVE NAV LINK ================= */
+
+    const sections =
+        document.querySelectorAll("main section[id]");
+
+    const navLinks =
+        document.querySelectorAll(".nav__link");
+
+
+    function activateLink() {
+
+        const scrollY =
+            window.pageYOffset + 150;
+
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop;
+
+            const sectionBottom =
+                sectionTop + section.offsetHeight;
+
+            const id =
+                section.getAttribute("id");
+
+
+            if (
+                scrollY >= sectionTop &&
+                scrollY < sectionBottom
+            ) {
+
+                navLinks.forEach(link => {
+
+                    link.classList.remove(
+                        "active-link"
+                    );
+
+                });
+
+
+                const active =
+                    document.querySelector(
+                        `.nav__link[href="#${id}"]`
+                    );
+
+
+                if (active) {
+
+                    active.classList.add(
+                        "active-link"
+                    );
+
+                }
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        activateLink
+    );
+
+
+    /* ================= CONTACT FORM ================= */
+
+    document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("cf-name").value;
+
+            const email =
+                document.getElementById("cf-email").value;
+
+            const message =
+                document.getElementById("cf-message").value;
+
+
+            const subject =
+                encodeURIComponent(
+                    "Portfolio Contact from " + name
+                );
+
+
+            const body =
+                encodeURIComponent(
+                    message +
+                    "\n\nFrom: " +
+                    name +
+                    "\nEmail: " +
+                    email
+                );
+
+
+            window.location.href =
+                "mailto:khavin2005@gmail.com" +
+                "?subject=" +
+                subject +
+                "&body=" +
+                body;
+
+        });
+
+</script>
+
+</body>
+</html>
